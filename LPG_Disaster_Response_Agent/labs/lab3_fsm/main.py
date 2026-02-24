@@ -19,7 +19,7 @@ async def main():
 
     # 1. Start FSM Agent
     fsm_agent = DisasterFSMAgent("fsm_agent@localhost", "password")
-    await fsm_agent.start(auto_register=True)
+    await fsm_agent.start(auto_register=False)
     print("FSM Agent started.")
     
     # 2. Start Sensor Agent
@@ -28,7 +28,7 @@ async def main():
         password="password", 
         target_jid="fsm_agent@localhost"
     )
-    await sensor_agent.start(auto_register=True)
+    await sensor_agent.start(auto_register=False)
     print("Sensor Agent started.\n")
     
     try:
